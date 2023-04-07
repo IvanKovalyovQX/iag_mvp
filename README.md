@@ -1,1 +1,2 @@
-# iag_mvp
+# run tests
+npm run test
