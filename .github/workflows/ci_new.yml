@@ -53,7 +53,7 @@ jobs:
           path: gh-pages
 
       - name: Allure Reports
-        uses: simple-elf/allure-report-action@master
+        uses: simple-elf/allure-report-action@v1.6
         if: always()
         id: allure-report
         with:
@@ -67,9 +67,7 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
-          PERSONAL_TOKEN: ${{github.SUPER_TOKEN}}
+          PERSONAL_TOKEN: ${{ github.SUPER_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-
-
 
