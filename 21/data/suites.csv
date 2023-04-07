@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Fri Apr 07 09:15:30 GMT 2023","Fri Apr 07 09:16:03 GMT 2023","33300","uat","example.spec.ts","","","","Add Reading",""
