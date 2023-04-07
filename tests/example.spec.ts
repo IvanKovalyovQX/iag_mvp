@@ -2,7 +2,7 @@ import { test, expect, request } from '@playwright/test';
 import { App } from '../pages/App';
 import { Api } from '../pages/Api';
 
-test.skip('Add Reading', async ({ page }) => {
+test('Add Reading', async ({ page }) => {
   const app = new App(page)
   await page.goto('/login');
   await page.waitForLoadState('networkidle')
@@ -21,7 +21,7 @@ test.skip('Add Reading', async ({ page }) => {
 
 
 
-test('Add api Reading', async ({ page }) => {
+test('login api', async ({ page }) => {
   const apiContex = await request.newContext()
   const api = new Api(apiContex)
   const url = 'https://uat-dot-msuser-dot-dynamikax-dev.appspot.com/api/user/authenticate-with-user-name-no-captcha?compact=true',
