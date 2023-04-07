@@ -23,7 +23,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           node-version: 18
           cache: 'npm'
 
@@ -54,7 +54,7 @@ jobs:
           path: gh-pages
 
       - name: Allure Reports
-        uses: simple-elf/allure-report-action@master
+        uses: simple-elf/allure-report-action@v1.6
         if: always()
         id: allure-report
         with:
@@ -68,9 +68,9 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         env:
-          PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
 
