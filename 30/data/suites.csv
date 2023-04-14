@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Apr 14 02:04:22 GMT 2023","Fri Apr 14 02:04:23 GMT 2023","1416","uat","example.spec.ts","","","","login api",""
+"broken","Fri Apr 14 02:04:53 GMT 2023","Fri Apr 14 02:05:27 GMT 2023","33559","uat","example.spec.ts","","","","Add Reading",""
