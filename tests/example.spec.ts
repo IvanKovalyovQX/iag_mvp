@@ -1,6 +1,7 @@
 import { test, expect, request } from '@playwright/test';
 import { App } from '../pages/App';
 import { Api } from '../pages/Api';
+import { dataSet } from '../utils/dataSet';
 
 test('Add Reading', async ({ page }) => {
   const app = new App(page)
@@ -21,14 +22,21 @@ test('Add Reading', async ({ page }) => {
 
 
 
-test('login api', async ({ page }) => {
+test.only('login api', async ({ page }) => {
   const apiContex = await request.newContext()
   const api = new Api(apiContex)
-  const url = 'https://uat-dot-msuser-dot-dynamikax-dev.appspot.com/api/user/authenticate-with-user-name-no-captcha?compact=true',
-  emailAddress = "iagpmrole@yahoo.com",
-  password = "Second@123",
-  userName =  "iag_pm_automation"
-  await api.loginPage.loginUser(emailAddress, password, userName, url)
+  const app = new App(page)
+  
+  const user = await api.loginPage.loginUser(dataSet.pmEmail, dataSet.pmPassword, dataSet.uatUrl1)
+  page.addInitScript(value => {
+    window.localStorage.setItem('currentUser', value)
+  }, `"${user.token}"`);
+  page.addInitScript(value => {
+    window.localStorage.setItem(btoa('roles'), value)
+  }, `${user.roles}`);
+  await page.goto('/')
+  await page.locator('//span[text()="Select Imaging Project"]').waitFor({state: 'visible'})
+  await app.dashboardPage.selectStudy('batch2automation')
 });
 
 

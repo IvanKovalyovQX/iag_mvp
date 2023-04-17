@@ -6,19 +6,21 @@ export class LoginApiPage {
         this.apiContext = apiContext
     }
     
-    async loginUser(email: string, password: string, userName: string, url: string) {
+    async loginUser(email: string, password: string, url: string) {
         const apiContext = await request.newContext({ignoreHTTPSErrors: true})
         const apiCall = await apiContext.post(url, {
           data: {
             emailAddress: email,
-            password: password,
-            userName: userName
+            password: password
           }
         })
         const response = await apiCall.json()
         expect(apiCall.ok()).toBeTruthy()
-        console.log(response)
-        
+        const token = response.data.jwt
+        const roles = btoa(JSON.stringify(response.data.roles))
+        return {token, roles}  
     }
+
+ 
 
 }
