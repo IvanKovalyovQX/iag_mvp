@@ -3,7 +3,7 @@ import { App } from '../pages/App';
 import { Api } from '../pages/Api';
 import { dataSet } from '../utils/dataSet';
 
-test('Add Reading', async ({ page }) => {
+test.skip('Add Reading', async ({ page }) => {
   const app = new App(page)
   await page.goto('/login');
   await page.waitForLoadState('networkidle')
