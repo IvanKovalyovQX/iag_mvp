@@ -1,4 +1,5 @@
-import { Page } from "@playwright/test";
+import { Page, request } from "@playwright/test";
+import { Api } from "./Api";
 
 export class LoginPage {
     page: Page
@@ -29,6 +30,20 @@ export class LoginPage {
         await this.inputEmailField(email)
         await this.inputPasswordField(password)
         await this.clickLoginBtn()
+        await this.page.waitForLoadState('networkidle')
+    }
+
+    async apiLogin(email: string, password: string, url: string) {
+        const apiContex = await request.newContext()
+        const api = new Api(apiContex)
+        const user = await api.loginPage.loginUser(email, password, url)
+        this.page.addInitScript(value => {
+            window.localStorage.setItem('currentUser', value)
+          }, `"${user.token}"`);
+        this.page.addInitScript(value => {
+          window.localStorage.setItem(btoa('roles'), value)
+        }, `${user.roles}`);
+        await this.page.goto('/')
         await this.page.waitForLoadState('networkidle')
     }
 
