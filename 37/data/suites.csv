@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Wed Apr 19 06:01:43 GMT 2023","Wed Apr 19 06:01:44 GMT 2023","746","uat","example.spec.ts","","","","login api",""
