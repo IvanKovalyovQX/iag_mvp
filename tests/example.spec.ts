@@ -23,6 +23,7 @@ test.skip('Add Reading', async ({ page }) => {
 
 
 test.only('login api', async ({ page }) => {
+  console.log(process.env.SITE_USER_PASSWORD)
   const apiContex = await request.newContext()
   const api = new Api(apiContex)
   const app = new App(page)
