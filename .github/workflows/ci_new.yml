@@ -34,8 +34,7 @@ jobs:
       - name: Run Playwright Tests 
         run: |
           npm run test
-          echo $SITE_USER_PASSWORD >> secrets.txt
-          echo ${{secrets.SITE_USER_PASSWORD}} | sed 's/./& /g'
+
         env:
           CENTRAL_READER_PASSWORD: ${{ secrets.CENTRAL_READER_PASSWORD }}
           SITE_USER_PASSWORD: ${{ secrets.SITE_USER_PASSWORD }}
