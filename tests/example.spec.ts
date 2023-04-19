@@ -59,6 +59,7 @@ test.only('login api', async ({ page }) => {
   await page.waitForTimeout(500)
   await page.locator('//*[text()="save"]').waitFor()
   await page.locator('[formcontrolname="modality"]').click()
+  await page.waitForTimeout(1000)
   await page.locator('//*[contains(text(),"Select All")]/../div').click()
   await page.keyboard.press('Escape')
   await page.locator('[placeholder="Comment"]').fill('comment')
