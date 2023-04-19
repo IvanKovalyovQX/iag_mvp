@@ -35,8 +35,10 @@ jobs:
         run: |
           npm run test
         env:
-          USER_EMAIL: ${{ secrets.USER_EMAIL }}
-          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+          CENTRAL_READER_PASSWORD: ${{ secrets.CENTRAL_READER_PASSWORD }}
+          SITE_USER_PASSWORD: ${{ secrets.SITE_USER_PASSWORD }}
+          SITE_READER_PASSWORD: ${{ secrets.SITE_READER_PASSWORD }}
+          PM_PASSWORD: ${{ secrets.PM_PASSWORD }}
 
       - uses: actions/upload-artifact@v3
         with:

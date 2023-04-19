@@ -26,7 +26,7 @@ test.only('login api', async ({ page }) => {
   const apiContex = await request.newContext()
   const api = new Api(apiContex)
   const app = new App(page)
-  await app.loginPage.apiLogin(dataSet.siteUserEmal, dataSet.siteUserPassword, dataSet.uatUrl1)
+  await app.loginPage.apiLogin(dataSet.siteUserEmal, `${process.env.SITE_USER_PASSWORD}`, dataSet.uatUrl1)
  
   await page.locator('//span[text()="Select Imaging Project"]').waitFor({state: 'visible'})
   await app.projectPage.selectStudy('Bark_JSW-2')
