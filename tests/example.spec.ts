@@ -56,7 +56,7 @@ test.only('login api', async ({ page }) => {
   await page.waitForLoadState('networkidle')
   await page.locator(`[mattooltip="Upload New"]`).nth(0).click()
   //
-  await page.waitForTimeout(500)
+  await page.waitForTimeout(1000)
   await page.locator('//*[text()="save"]').waitFor()
   await page.locator('[formcontrolname="modality"]').click()
   await page.waitForTimeout(1000)
