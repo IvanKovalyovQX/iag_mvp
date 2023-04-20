@@ -26,7 +26,7 @@ test.only('login api', async ({ page }) => {
   const apiContex = await request.newContext()
   const api = new Api(apiContex)
   const app = new App(page)
-  await app.loginPage.apiLogin(dataSet.siteUserEmal, dataSet.siteUserPassword, dataSet.uatUrl1)
+  await app.loginPage.apiLogin(dataSet.siteUserEmal, `${process.env.SITE_USER_PASSWORD}`, dataSet.uatUrl1)
  
   await page.locator('//span[text()="Select Imaging Project"]').waitFor({state: 'visible'})
   await app.projectPage.selectStudy('Bark_JSW-2')
@@ -55,9 +55,10 @@ test.only('login api', async ({ page }) => {
   await page.waitForLoadState('networkidle')
   await page.locator(`[mattooltip="Upload New"]`).nth(0).click()
   //
-  await page.waitForTimeout(500)
+  await page.waitForTimeout(1000)
   await page.locator('//*[text()="save"]').waitFor()
   await page.locator('[formcontrolname="modality"]').click()
+  await page.waitForTimeout(1000)
   await page.locator('//*[contains(text(),"Select All")]/../div').click()
   await page.keyboard.press('Escape')
   await page.locator('[placeholder="Comment"]').fill('comment')
