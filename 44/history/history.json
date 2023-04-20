@@ -1,0 +1,23 @@
+{
+  "a812d4dfb0f3e8dde3eb97da54960432" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "aadc7cae1a23ce0",
+      "reportUrl" : "https://IvanKovalyovQX.github.io/iag_mvp/44//#testresult/aadc7cae1a23ce0",
+      "status" : "broken",
+      "statusDetails" : "Test timeout of 30000ms exceeded.",
+      "time" : {
+        "start" : 1681963297130,
+        "stop" : 1681963328581,
+        "duration" : 31451
+      }
+    } ]
+  }
+}

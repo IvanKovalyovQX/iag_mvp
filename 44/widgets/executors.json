@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://IvanKovalyovQX.github.io/iag_mvp",
+  "buildOrder" : 44,
+  "buildName" : "GitHub Actions Run #4750356171",
+  "buildUrl" : "https://github.com/IvanKovalyovQX/iag_mvp/actions/runs/4750356171",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://IvanKovalyovQX.github.io/iag_mvp/44/"
+} ]
