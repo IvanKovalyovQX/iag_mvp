@@ -1,1 +1,0 @@
-[{"uid":"e3d959d9ae40e7f2","name":"login api","time":{"start":1681178730915,"stop":1681178732378,"duration":1463},"status":"passed","severity":"normal"},{"uid":"24e8fab2077408b1","name":"Add Reading","time":{"start":1681178761918,"stop":1681178794995,"duration":33077},"status":"broken","severity":"normal"}]
