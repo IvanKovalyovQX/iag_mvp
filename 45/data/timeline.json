@@ -1,0 +1,43 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az451-727",
+    "children" : [ {
+      "name" : "fv-az451-727-2460-playwright-worker-1",
+      "children" : [ {
+        "name" : "login api",
+        "uid" : "eb4dbcdaec099e85",
+        "parentUid" : "cc715f207719b36faaccd0f8676cf023",
+        "status" : "passed",
+        "time" : {
+          "start" : 1682042844154,
+          "stop" : 1682042867120,
+          "duration" : 22966
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "uat" ]
+      } ],
+      "uid" : "cc715f207719b36faaccd0f8676cf023"
+    }, {
+      "name" : "fv-az451-727-2460-playwright-worker-0",
+      "children" : [ {
+        "name" : "login api",
+        "uid" : "1b7c7126a5adb056",
+        "parentUid" : "d8fe75767b2077027b6ede8d8a3361d0",
+        "status" : "broken",
+        "time" : {
+          "start" : 1682042812284,
+          "stop" : 1682042843809,
+          "duration" : 31525
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "uat" ]
+      } ],
+      "uid" : "d8fe75767b2077027b6ede8d8a3361d0"
+    } ],
+    "uid" : "ac18eea243c67e709c0ba1d57d5887c6"
+  } ],
+  "name" : "timeline"
+}
